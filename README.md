@@ -31,25 +31,14 @@ key_file.close()
 # ph = transip_api_v6.Generic(login, key)
 headers = transip_api_v6.Generic(login, key).get_headers()
 
-# Request domains managed by this account
-domains=transip_api_v6.Domains(headers)
-managed_domains=domains.list_domains()
-print(json.dumps(managed_domains,indent=2))
-print()
-
 # Request DNS entries for this domain
 dns_entries = domains.list_dns_entries(domain)
-print(json.dumps(dns_entries,indent=2))
-print()
 
 # Find entry
 found_dns_entries = []
 for dns_entry in dns_entries['dnsEntries']:
   if dns_entry['name'] == find_dns_entry and dns_entry['type'] == 'A':
     found_dns_entries.append(dns_entry)
-    print (dns_entry)
-print (json.dumps(found_dns_entries))
-print()
 
 # Change entry for this domain with current public IP
 if len(found_dns_entries) == 0:
