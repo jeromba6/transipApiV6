@@ -10,7 +10,7 @@ Example python code:
 <pre><code>#!/usr/bin/env python3
 import requests
 import json
-import transip_api_v6
+import transipApiV6
 
 login          = 'username'       # Username from Transip
 keyfile        = 'test copy.pem'  # Key generated @ Transip API page
@@ -28,8 +28,8 @@ pub_ip=json.loads(res.text)['ip']
 key_file = open(keyfile, "r")
 key = key_file.read()
 key_file.close()
-# ph = transip_api_v6.Generic(login, key)
-headers = transip_api_v6.Generic(login, key).get_headers()
+# ph = transipApiV6.Generic(login, key)
+headers = transipApiV6.Generic(login, key).get_headers()
 
 # Request DNS entries for this domain
 dns_entries = domains.list_dns_entries(domain)
@@ -65,4 +65,3 @@ else:
   print('Multiple entries found, can\'t determine which to change (if any).')
 
 </code></pre>
-test
