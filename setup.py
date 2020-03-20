@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="transipApiV6", # Replace with your own username
-    version="0.0.1",
+    version="0.0.2",
     author="Jeroen van Gemert",
     author_email="pypi@jeroen.van.gemert.net",
     description="Package to interact with the V6 API of Transip ",
